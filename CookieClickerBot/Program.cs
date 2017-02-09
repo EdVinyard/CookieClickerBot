@@ -1,15 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace CookieClickerBot
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            IWebDriver browser = new ChromeDriver(
+                new ChromeOptions
+                {
+                    LeaveBrowserRunning = true,
+                });
+
+            browser.Navigate().GoToUrl("http://orteil.dashnet.org/cookieclicker/");
+            var bot = new StupidBot(browser);
+
+            while (true)
+            {
+                bot.Act();
+            }
         }
     }
 }
