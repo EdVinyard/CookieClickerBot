@@ -2,7 +2,7 @@
 
 namespace CookieClickerBot
 {
-    public class StupidBot
+    internal class StupidBot
     {
         private readonly IWebDriver _browser;
 

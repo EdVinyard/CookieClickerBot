@@ -3,9 +3,9 @@ using OpenQA.Selenium.Chrome;
 
 namespace CookieClickerBot
 {
-    public static class Program
+    internal static class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             IWebDriver browser = new ChromeDriver(
                 new ChromeOptions
